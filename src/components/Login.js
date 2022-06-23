@@ -1,22 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { login } from '../lib/session'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [loginForm, setLoginForm] = React.useState({
     email: '',
     password: ''
   })
+  const navigate = useNavigate()
   const submitLoginForm = async (e) => {
     e.preventDefault()
-    console.log(loginForm)
     const response = await login(loginForm)
     // setLoginForm({
     //   email: '',
     //   password: ''
     // })
-
-    console.log(response)
+    navigate('/')
   }
 
   return (

@@ -1,17 +1,12 @@
+import axios from "axios"
+import Cookies from "js-cookie"
 export const login = async (credential) => {
-  const users = {
+  const user = {
     user: credential
   }
-  console.log(users)
-  const response = await fetch('http://localhost:3000/users/sign_in',{
-    method: 'POST',
-    mode: 'cors',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(users)
-  })
-  return response.data
+  const response = await axios.post('http://localhost:3000/users/sign_in',user)
+  const token = response.headers.authorization.split(' ')[1]
+  Cookies.set('jwt', token)
+  return response
 }
 
