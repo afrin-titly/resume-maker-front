@@ -29,7 +29,16 @@ const Signup = () => {
     }
 
     const response = await signup(validUser)
-    console.log(response)
+    console.log(response.data.message)
+    if(response.data.success) {
+      toast.success(response.data.message)
+    }
+    else {
+      const err = Object.keys(response.data.message).map((k)=>(
+        toast.error(`${k} ${response.data.message[k]}`)
+      ))
+    }
+
   }
   const validEmail = () => {
     const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
