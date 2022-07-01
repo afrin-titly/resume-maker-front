@@ -1,6 +1,8 @@
 import React from 'react'
 import toast from 'react-hot-toast'
 import { useSearchParams } from 'react-router-dom'
+import cover from "../images/cover.webp"
+import JobPost from './JobPost'
 const Home = () => {
 
   const [params] = useSearchParams()
@@ -11,7 +13,20 @@ const Home = () => {
   },[])
 
   return (
-    <div>Home</div>
+    <div className='p-3 mx-auto'>
+      <div className='w-full'>
+        <img src={cover} className='object-fill w-full h-80 rounded-lg' />
+      </div>
+      <div className='grid grid-cols-3 grid-flow-row gap-4 p-3'>
+        <JobPost />
+        <JobPost />
+        <JobPost />
+        <JobPost />
+        <JobPost />
+        <JobPost />
+      </div>
+
+    </div>
   )
 }
 
