@@ -10,7 +10,9 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </main>
-
+      <footer className="text-center text-gray-500 text-xs">
+        &copy;2022 Resume maker. All rights reserved.
+      </footer>
     </>
   )
 }
