@@ -57,33 +57,32 @@ const Signup = () => {
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 First Name
               </label>
-              <input onChange={(e)=>setUser({...user, first_name: e.target.value})} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
+              <input onChange={(e)=>setUser({...user, first_name: e.target.value})} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Last Name
               </label>
-              <input onChange={(e)=>setUser({...user, last_name: e.target.value})} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
+              <input onChange={(e)=>setUser({...user, last_name: e.target.value})} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Email
               </label>
-              <input onChange={(e)=>setUser({...user, email: e.target.value})} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
+              <input onChange={(e)=>setUser({...user, email: e.target.value})} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" />
             </div>
-            <div className="mb-6">
+            <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Password
               </label>
-              <input onChange={(e)=>setUser({...user, password: e.target.value})} minLength="6" className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************"/>
-              <p className="text-red-500 text-xs italic">Please choose a password.</p>
+              <input onChange={(e)=>setUser({...user, password: e.target.value})} required minLength="6" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******"/>
             </div>
-            <div className="mb-6">
+            <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Confirm Password
               </label>
-              <input onChange={(e)=>setUser({...user, confirm_password: e.target.value})} minLength="6" className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************"/>
-              <p className="text-red-500 text-xs italic">Please choose a password.</p>
+              <input onChange={(e)=>setUser({...user, confirm_password: e.target.value})} required minLength="6" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******"/>
+
             </div>
 
             <div className="flex items-center justify-between">

@@ -8,16 +8,39 @@ const Login = () => {
     email: '',
     password: ''
   })
+  const [warningStyle, setWarningStyle] = React.useState({
+    emailClass: '',
+    passClass: ''
+  })
   const navigate = useNavigate()
   const submitLoginForm = async (e) => {
     e.preventDefault()
-    const response = await login(loginForm)
-    // setLoginForm({
-    //   email: '',
-    //   password: ''
-    // })
+    let temp_email = ''
+    let temp_pass = ''
+    if(loginForm.password === '') {
+      temp_pass = 'border-red-500'
+      console.log("pass")
+    }
+
+    if(loginForm.email === '') {
+      temp_email = 'border-red-500'
+    }
+
+    setWarningStyle({emailClass: temp_email , passClass: temp_pass})
+
+    if (loginForm.email !== '' && loginForm.password !== ''){
+      const response = await login(loginForm)
+      // setLoginForm({
+      //   email: '',
+      //   password: ''
+      // })
     navigate('/')
+    } else {
+      return
+    }
   }
+  console.log(warningStyle)
+  console.log(loginForm)
 
   return (
     <div className='body-container'>
@@ -28,14 +51,14 @@ const Login = () => {
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Email
               </label>
-              <input onChange={(e)=>setLoginForm({...loginForm, email: e.target.value})} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+              <input onChange={(e)=>setLoginForm({...loginForm, email: e.target.value})} className={`shadow appearance-none border ${warningStyle.emailClass} rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`} id="username" type="text" placeholder="Username" />
             </div>
             <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Password
               </label>
-              <input onChange={(e)=>setLoginForm({...loginForm, password: e.target.value})} className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************"/>
-              <p className="text-red-500 text-xs italic">Please choose a password.</p>
+              <input onChange={(e)=>setLoginForm({...loginForm, password: e.target.value})} className={`shadow appearance-none border ${warningStyle.passClass} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`} id="password" type="password" placeholder="******************"/>
+
             </div>
 
               <div className="flex items-center justify-between">
