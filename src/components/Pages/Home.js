@@ -2,6 +2,7 @@ import React from 'react'
 import toast from 'react-hot-toast'
 import { useSearchParams } from 'react-router-dom'
 import cover from "../../images/cover.webp"
+import Cvs from '../Cvs'
 import JobPost from '../JobPost'
 import UPProgressBar from '../UPProgressBar'
 const Home = () => {
@@ -28,6 +29,11 @@ const Home = () => {
         <JobPost />
         <JobPost />
       </div>
+
+      <div className='grid grid-cols-4 grid-flow-row p-3'>
+        <Cvs/>
+      </div>
+     
 
     </div>
   )
