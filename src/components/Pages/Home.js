@@ -1,9 +1,9 @@
 import React from 'react'
 import toast from 'react-hot-toast'
 import { useSearchParams } from 'react-router-dom'
-import cover from "../images/cover.webp"
-import JobPost from './JobPost'
-import UPProgressBar from './UPProgressBar'
+import cover from "../../images/cover.webp"
+import JobPost from '../JobPost'
+import UPProgressBar from '../UPProgressBar'
 const Home = () => {
 
   const [params] = useSearchParams()
