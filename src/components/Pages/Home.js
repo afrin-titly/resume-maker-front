@@ -15,13 +15,12 @@ const Home = () => {
   },[])
 
   return (
-    
     <div className='p-3 mx-auto'>
       <UPProgressBar filled="50%"></UPProgressBar>
       <div className='w-full'>
         <img src={cover} className='object-fill w-full h-80 rounded-lg' />
       </div>
-      <div className='grid grid-cols-3 grid-flow-row gap-4 p-3'>
+      <div className='grid grid-cols-4 grid-flow-row gap-2 p-3'>
         <JobPost />
         <JobPost />
         <JobPost />
@@ -33,8 +32,6 @@ const Home = () => {
       <div className='grid grid-cols-4 grid-flow-row p-3'>
         <Cvs/>
       </div>
-     
-
     </div>
   )
 }
