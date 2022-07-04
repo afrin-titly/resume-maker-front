@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 import { useSearchParams } from 'react-router-dom'
 import cover from "../../images/cover.jpg"
 import Cvs from '../Cvs'
-import JobPost from '../JobPost'
+import JobPosts from '../JobPosts'
 import UPProgressBar from '../UPProgressBar'
 const Home = () => {
 
@@ -20,18 +20,8 @@ const Home = () => {
       <div className='w-full'>
         <img src={cover} className='pl-5 pr-5 object-fill w-full h-[550px]' />
       </div>
-      <div className='grid grid-cols-4 grid-flow-row gap-2 p-3'>
-        <JobPost />
-        <JobPost />
-        <JobPost />
-        <JobPost />
-        <JobPost />
-        <JobPost />
-      </div>
-
-      <div className='grid grid-cols-4 grid-flow-row p-3'>
-        <Cvs/>
-      </div>
+      <JobPosts />
+      <Cvs/>
     </div>
   )
 }
