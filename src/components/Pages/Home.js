@@ -4,7 +4,6 @@ import { useSearchParams } from 'react-router-dom'
 import cover from "../../images/cover.jpg"
 import Cvs from '../Cvs'
 import JobPosts from '../JobPosts'
-import UPProgressBar from '../UPProgressBar'
 const Home = () => {
 
   const [params] = useSearchParams()
