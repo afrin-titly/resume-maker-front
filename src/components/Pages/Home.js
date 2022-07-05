@@ -16,7 +16,6 @@ const Home = () => {
 
   return (
     <div className='p-3 mx-auto'>
-      <UPProgressBar filled="50%"></UPProgressBar>
       <div className='w-full'>
         <img src={cover} className='pl-5 pr-5 object-fill w-full h-[550px]' />
       </div>
