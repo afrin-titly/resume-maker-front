@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const JobPost = () => {
   return (
-    <div className="max-w-sm bg-teal-200 rounded-lg border border-gray-200 shadow-md dark:hover:bg-teal-400">
+    <div className="max-w-sm bg-amber-400 hover:bg-amber-300 rounded-lg border border-gray-200 shadow-md dark:hover:bg-teal-400">
       <Link to="/jobs/1">
         <img className="rounded-t-lg md:h-60 md:w-full p-2" src={jobpost} alt="" />
       </Link>

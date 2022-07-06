@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-teal-700">
-      <div className="container flex flex-wrap justify-between items-center mx-auto h-16">
+    <nav className="bg-slate-200 drop-shadow-sm border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-teal-700">
+      <div className="w-full flex flex-wrap justify-between px-5 items-center h-16">
         <Link to="/" className="flex items-center">
           {/* add logo here */}
           {/* <img src="/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> */}
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Resume Maker</span>
+          <span className="self-center text-2xl text-amber-800 font-semibold whitespace-nowrap dark:text-white"><Logo/>Re<span className="text-orange-800">sume Ma</span>ker</span>
         </Link>
         <button data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
@@ -18,13 +19,13 @@ const Navbar = () => {
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
-            <Link to="/user/1" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</Link>
+            <Link to="/user/1" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</Link>
             </li>
             <li>
-              <Link to="" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Upgrade</Link>
+              <Link to="" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Upgrade</Link>
             </li>
             <li>
-              <Link to="/signup" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</Link>
+              <Link to="/signup" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</Link>
             </li>
           </ul>
         </div>

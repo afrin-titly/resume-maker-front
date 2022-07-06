@@ -14,7 +14,7 @@
 .progressBarFill {
     display: block;
     height: 12px;
-    background-color: #03342a;
+    background-color: #7f550a;
     border-radius: 3px;
     
     transition: width 500ms ease-in-out;
