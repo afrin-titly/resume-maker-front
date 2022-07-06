@@ -1,10 +1,11 @@
 /* button component */
 .button {
-    background: var(--successGreen);
-    color: var(--fontPrimary);
-    padding: 0.6rem 1.2rem;
+    margin-left: 15px;
+    background-color: rgb(217 119 6);
+    color: #fff;
+    padding: 0.5rem 1rem;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -16,7 +17,7 @@
   }
   
   .button:hover {
-    background: var(--fontPrimary);
+    background: #aa7721;
     color: #fff;
   }
   
