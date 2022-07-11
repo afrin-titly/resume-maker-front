@@ -8,9 +8,10 @@ const Job = () => {
     <div className='m-8'>
       <JobDetail />
       <div className='mt-10'>
-        <div className='flex'>
-          <p className='text-2xl font-bold text-center w-11/12'>Applications</p>
-          <SearchBar />
+        <div className='flex flex-row'>
+          <span class="w-1/3"></span>
+          <p className='text-2xl font-bold text-center w-1/3'>Applications</p>
+          <SearchBar/>
         </div>
         <Cvs />
     </div>

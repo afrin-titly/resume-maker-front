@@ -7,8 +7,6 @@ const Navbar = () => {
     <nav className="bg-slate-200 drop-shadow-sm border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-teal-700">
       <div className="w-full flex flex-wrap justify-between px-5 items-center h-16">
         <Link to="/" className="flex items-center">
-          {/* add logo here */}
-          {/* <img src="/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> */}
           <span className="self-center text-2xl text-amber-800 font-semibold whitespace-nowrap dark:text-white"><Logo/>Re<span className="text-orange-800">sume Ma</span>ker</span>
         </Link>
         <button data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
@@ -22,11 +20,15 @@ const Navbar = () => {
             <Link to="/user/1" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</Link>
             </li>
             <li>
+              <Link to="/jobs" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Job Openings</Link>
+            </li>
+            <li>
               <Link to="" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Upgrade</Link>
             </li>
             <li>
               <Link to="/signup" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</Link>
             </li>
+
           </ul>
         </div>
       </div>

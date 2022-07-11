@@ -8,6 +8,9 @@ import Layout from './components/Layout';
 import UserProfile from './components/Pages/UserProfile';
 import Job from './components/Pages/Job';
 import EditUser from './components/Pages/EditUser';
+import NewJobPost from './components/Pages/NewJobPost';
+import EditJobPost from './components/Pages/EditJobPost';
+import RecruiterOpenings from './components/Pages/RecruiterOpenings';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/jobs/:id' element={<Job />} />
+          <Route path='/jobs/:id/edit' element={<EditJobPost />} />
+          <Route path='/jobs/new' element={<NewJobPost />} />
+          <Route path='/jobs' element={<RecruiterOpenings />} />
         </Routes>
       </Layout>
     </div>
