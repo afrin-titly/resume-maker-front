@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const signup = async (userParams) => {
+export const signupUser = async (userParams) => {
   const user = {
     user: userParams
   }

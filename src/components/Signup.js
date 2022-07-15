@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
-import { signup } from '../lib/users'
+import { useAuth } from '../context/AuthContext'
 
 const Signup = () => {
   const [user, setUser] = React.useState({
@@ -11,6 +11,7 @@ const Signup = () => {
     password: '',
     confirm_password: ''
   })
+  const { signup } = useAuth()
   const handleSignup = async (e) => {
     e.preventDefault()
     if(user.password !== user.confirm_password){

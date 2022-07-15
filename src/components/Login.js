@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { login } from '../lib/session'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
   const [loginForm, setLoginForm] = React.useState({
@@ -12,6 +12,7 @@ const Login = () => {
     emailClass: '',
     passClass: ''
   })
+  const { login } = useAuth()
   const navigate = useNavigate()
   const submitLoginForm = async (e) => {
     e.preventDefault()
@@ -30,17 +31,10 @@ const Login = () => {
 
     if (loginForm.email !== '' && loginForm.password !== ''){
       const response = await login(loginForm)
-      // setLoginForm({
-      //   email: '',
-      //   password: ''
-      // })
-    navigate('/')
     } else {
       return
     }
   }
-  console.log(warningStyle)
-  console.log(loginForm)
 
   return (
     <div className='body-container'>
