@@ -4,7 +4,7 @@ import Logo from './Logo'
 import { useAuth } from '../context/AuthContext'
 
 const Navbar = () => {
-  const { currentUser, logout } = useAuth()
+  const { currentUser, logout , login} = useAuth()
   console.log(currentUser)
   return (
     <nav className="bg-slate-200 drop-shadow-sm border-gray-200 px-2 sm:px-4 py-2.5">
@@ -29,8 +29,13 @@ const Navbar = () => {
               <Link to="" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0">Upgrade</Link>
             </li>
             <li>
-              <button onClick={logout} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Logout</button>
-            </li>
+              {console.log(currentUser)}
+              {currentUser?
+              <button onClick={logout} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Logout</button>:
+
+              <button onClick={login} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Login</button>
+              }
+              </li>
 
           </ul>
         </div>

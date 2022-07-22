@@ -12,12 +12,12 @@ export const userLogin = async (credential) => {
 
 export const userLogout = async() => {
   const token = Cookies.get('jwt')
-  const response = axios.delete('http://localhost:3000/users/sign_out',
+  const response = await axios.delete('http://localhost:3000/users/sign_out',
   {
     headers: {
-      Authorization: token
+      Authorization: `Bearer ${token}`
     }
   })
-  console.log(response)
+  return response;
 }
 

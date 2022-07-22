@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { signupUser } from "../lib/users"
 import { userLogin, userLogout } from "../lib/session";
+import Cookies from "js-cookie"
 
 const AuthContext = React.createContext();
 
@@ -24,6 +25,13 @@ export function AuthProvider({children}) {
 
   const logout = async () => {
     const response = await userLogout()
+    console.log(response.status);
+    if(response.status=200){
+      setCurrentUser(null)
+      Cookies.remove("jwt");
+    }
+
+    
     return response
   }
   const value = {
