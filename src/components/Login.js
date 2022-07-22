@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const Login = () => {
   const [loginForm, setLoginForm] = React.useState({
@@ -31,6 +32,14 @@ const Login = () => {
 
     if (loginForm.email !== '' && loginForm.password !== ''){
       const response = await login(loginForm)
+      console.log(response);
+      if(response.status==200) {
+        toast.success(response.data.message);
+        navigate("/")
+      }
+      else {
+        toast.error("Login failed");
+      }
     } else {
       return
     }

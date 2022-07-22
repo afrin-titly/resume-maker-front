@@ -2,10 +2,26 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { useAuth } from '../context/AuthContext'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-  const { currentUser, logout , login} = useAuth()
+
+  const { currentUser, logout} = useAuth()
   console.log(currentUser)
+  const navigate = useNavigate();
+  const logoutUser = async (e) => {
+
+    const response = await logout()
+    console.log(response);
+    if(response.status==200) {
+      toast.success(response.data.message);
+      navigate("/")
+    }
+    else {
+      toast.error("Login failed");
+    }
+  } 
   return (
     <nav className="bg-slate-200 drop-shadow-sm border-gray-200 px-2 sm:px-4 py-2.5">
       <div className="w-full flex flex-wrap justify-between px-5 items-center h-16">
@@ -31,9 +47,10 @@ const Navbar = () => {
             <li>
               {console.log(currentUser)}
               {currentUser?
-              <button onClick={logout} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Logout</button>:
-
-              <button onClick={login} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Login</button>
+              <button onClick={logoutUser} className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-orange-900 md:p-0 ">Logout</button>:
+              <li>
+                <Link to="/login" className="block py-2 pr-4 pl-3 text-amber-700 border-b border-gray-100 text-base font-semibold hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-900 md:p-0">Login</Link>
+              </li>
               }
               </li>
 
