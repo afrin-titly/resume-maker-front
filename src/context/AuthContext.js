@@ -10,8 +10,7 @@ export function useAuth() {
   return useContext(AuthContext)
 }
 export function AuthProvider({children}) {
-  const [currentUser, setCurrentUser] = useState({})
-
+  const [currentUser, setCurrentUser] = useState()
   const login = async (loginForm) => {
     const response = await userLogin(loginForm)
     setCurrentUser(response.data.user)
@@ -26,12 +25,12 @@ export function AuthProvider({children}) {
   const logout = async () => {
     const response = await userLogout()
     console.log(response.status);
-    if(response.status=200){
+    if(response.status === 200){
       setCurrentUser(null)
       Cookies.remove("jwt");
     }
 
-    
+
     return response
   }
   const value = {
